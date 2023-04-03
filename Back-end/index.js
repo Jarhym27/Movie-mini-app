@@ -8,26 +8,24 @@ app.use(cors())
 
 
 
-let MovieArray = [];
 
 const movies = [
-  {title: 'Mean Girls'},
-  {title: 'Hackers'},
-  {title: 'The Grey'},
-  {title: 'Sunshine'},
-  {title: 'Ex Machina'},
-  {title: '300'},
-  {title: 'Shotas'},
-  {title: 'Blank Panter'},
-  {title: 'Avengers'},
-  {title: 'Ace Ventura'},
-  {title: 'Mad Max'},{title: 'Venom'},
-  {title: 'Spiderman'},
+  {id: 1,title: 'Mean Girls'},
+  {id: 2,title: 'Hackers'},
+  {id: 3,title: 'The Grey'},
+  {id: 4,title: 'Sunshine'},
+  {id: 5,title: 'Ex Machina'},
+  {id: 6,title: '300'},
+  {id: 7,title: 'Shotas'},
+  {id: 8,title: 'Blank Panter'},
+  {id: 9,title: 'Avengers'},
+  {id: 10,title: 'Ace Ventura'},
+  {id: 11, title: 'Mad Max'},
+  {id: 12, title: 'Venom'},
+  {id: 13, title: 'Spiderman'},
 
 ];
-// for(let i = 0; i <  30; i++){
-//   MovieArray.push({movie: faker.internet.songName(), actor: faker.name.fullName()  })
-// }
+
 
 
 
