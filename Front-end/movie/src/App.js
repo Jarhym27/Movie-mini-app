@@ -1,21 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import { faker } from '@faker-js/faker'
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
 
-  let MovieArray = [];
+const [fetchMovies, setFetchMovies] = useState([])
+useEffect(() => { 
+  const getData = async() => {
+    const data = await axios.get('http://localhost:3001/');
+    setFetchMovies(data)
+   }
+   getData();
+}, [])
 
-  const movies = [
-    {title: 'Mean Girls'},
-    {title: 'Hackers'},
-    {title: 'The Grey'},
-    {title: 'Sunshine'},
-    {title: 'Ex Machina'},
-  ];
-  for(let i = 0; i <  30; i++){
-    MovieArray.push({movie: faker.music.songName, actor: faker.name.fullName  })
-  }
+
 
 
   return (
@@ -24,11 +23,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Movie list
+         </p>
+       <div>{fetchMovies.data.map(element => <h2>title: {element.title}</h2>)}</div> 
+      
 
-       
-       <p><div>{movies.map(element => <div>{element.title}</div>)}</div></p> 
-       {/* {/* </div> {homes.map(home => <div>{home.name}</div>)} */}
- </p>
         <a 
           className="App-link"
           href="https://reactjs.org"
