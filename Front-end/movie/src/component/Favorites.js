@@ -38,17 +38,10 @@ const Favorite = () => {
               <button onClick={() => handleAddFavorite(movie)}>
                 Add to Favorites
               </button>
-
-             
-        
           </li>
 
         ))}
-      </ul>
-            
-
-
-
+      </ul>       
         
       <h2>Favorites</h2>
       <ul>

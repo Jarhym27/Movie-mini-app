@@ -7,9 +7,19 @@ import Favorites from './component/Favorites';
 
 export const MovieContext = React.createContext();
 
-function App() {
+function App(props) {
 
 const [fetchMovies, setFetchMovies] = useState({data:[]});
+// const [getApiMovies, setApiMovies] = useState({data:[]})
+
+// useEffect(() => { 
+//   const getNewData = async() => {
+//     const data = await axios.get('https://www.themoviedb.org/documentation/api');
+//     setApiMovies(data.data) 
+//    }
+//    getNewData();
+// }, [])
+// console.log("data:", getApiMovies)
 
 useEffect(() => { 
   const getData = async() => {
@@ -19,7 +29,7 @@ useEffect(() => {
    getData();
 }, [])
 
-console.log("data :",fetchMovies.data)
+// console.log("data :",fetchMovies.data)
 
   // const movies = [
   //   {title: 'Mean Girls'},
@@ -50,25 +60,9 @@ console.log("data :",fetchMovies.data)
     <MovieContext.Provider value={{fetchMovies, setFetchMovies}}>
     <div className="App">
       < SearchBar/>
-      < Favorites/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Movie list
-       {/* <p><div>{movies.map(element => <div>{element.title}</div>)}</div></p> */}
-         </p>
-       <div>{fetchMovies.data.map(element => <h2>title: {element.title}</h2>)}</div> 
+      < Favorites/>
       
-
-        <a 
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-         
-        </a>
         <div> </div>
       </header>
     </div>
